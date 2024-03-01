@@ -27,8 +27,13 @@ public class Organism implements OrganismBehavior {
         System.out.println(organismType+" is moving in the " + direction + " direction.");
     }
     public void interact(Organism target) {
-
-        System.out.println(organismType+" is interacting with another organism.");
+        if (target instanceof Animal) {
+            System.out.println(organismType + " is interacting with an animal.");
+        } else if (target instanceof Plant) {
+            System.out.println(organismType + " is interacting with a plant.");
+        } else {
+            System.out.println(organismType + " is interacting with another organism.");
+        }
     }
-}
 
+}
